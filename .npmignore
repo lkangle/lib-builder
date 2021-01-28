@@ -1,0 +1,7 @@
+test
+dist
+node_modules
+*.iml
+.idea
+package-lock.json
+README.md
