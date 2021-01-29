@@ -25,7 +25,6 @@ Options:
 在项目根目录下创建`build.config.js`，默认配置
 ```json5
 {
-  mode: 'development',     // 构建模式 默认开发（不压缩） production生成（压缩代码）
   input: '',               // 入口文件
   plugins: [],             // 要使用的插件
   extensions: ['.ts', '.js', '.json'],
@@ -37,7 +36,7 @@ Options:
     contentBase: '/dist',
     port: 4002
   },
-  terser: {}               // 代码压缩配置 rollup-plugin-terser
+  terser: false               // 代码压缩配置 rollup-plugin-terser
   // 可写其他rollup支持的配置
 }
 ```

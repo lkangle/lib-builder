@@ -1,0 +1,13 @@
+{
+  "presets": [
+    [
+      "@babel/env",
+      {
+        "targets": {
+          "chrome": 80
+        }
+      }
+    ]
+  ],
+  "plugins": []
+}
