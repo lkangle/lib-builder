@@ -7,6 +7,7 @@ const { createProject } = require('./lib/projects')
 program.version(version, '-v, --version', '查看工具版本号')
   .helpOption('-h, --help', '查看帮助')
   .addHelpCommand('help', '查看命令帮助')
+  .usage('[command] [options]')
 
 program.command('build', { isDefault: true })
   .description('library打包 (默认命令)')

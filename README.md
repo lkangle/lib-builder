@@ -10,15 +10,41 @@ npm install --save-dev @lkl/builder --registry=http://npm.lkangle.cn
 ### 使用
 ```shell script
 $ npx builder -h
-Usage: builder <option>
+Usage: builder [command] [options]
 
 Options:
-  -v, --version          查看工具版本号
+  -v, --version                    查看工具版本号
+  -h, --help                       查看帮助
+
+Commands:
+  build [options]                  library打包 (默认命令)
+  add <library>                    添加库，支持: ts, jest, eslint, babel
+  create [options] <project-name>  使用模板初始化一个项目
+  help                             查看命令帮助
+
+$ npx builder help build
+Usage: builder build [options]
+
+library打包 (默认命令)
+
+Options:
   -i, --input <input>    输入文件 (default: "index.js")
   -o, --output <output>  输出文件 (default: "dist/index.js")
-  -f, --format <format>  输出的文件类型 (default: "umd")
-  -w, --watch            监听文件变化
+  -f, --format <format>  输出的文件类型 (default: "iife")
+  -n, --name <name>      模块名
+  -w, --watch            监听文件变化 (default: false)
   -h, --help             查看帮助
+
+$ npx builder help create
+Usage: builder create [options] <project-name>
+
+使用模板初始化一个项目
+
+Options:
+  --ts        使用typescript (default: false)
+  --jest      添加jest (default: false)
+  --eslint    添加eslint (default: false)
+  -h, --help  查看帮助
 ```
 
 ### 支持使用配置文件
@@ -36,7 +62,7 @@ Options:
     contentBase: '/dist',
     port: 4002
   },
-  terser: false               // 代码压缩配置 rollup-plugin-terser
+  terser: false            // 代码压缩配置 rollup-plugin-terser
   // 可写其他rollup支持的配置
 }
 ```
@@ -55,11 +81,11 @@ Options:
 
 - rollup-plugin-serve
 
-在开发模式并且启用`-w`时会自动启用。可通过`server`来指定配置
+在启用`-w`时会自动启用。可通过`server`来指定配置
 
 - rollup-plugin-terser
 
-在生产模式并且`terser`不为`false`时启用，可以通过`terser`来指定配置
+当`terser`不为`false`时启用，可以通过`terser`来指定配置
 
 - @rollup/plugin-babel
 
