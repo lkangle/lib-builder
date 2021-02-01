@@ -10,7 +10,6 @@ const {
 } = require('../../lib/utils')
 const fs = require('fs')
 const path = require('path')
-const unzip = require('unzip')
 
 describe('[Test] utils', () => {
   test('mkdirs', () => {
