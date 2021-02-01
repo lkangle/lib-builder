@@ -2,6 +2,7 @@
 const program = require('commander')
 const { version } = require('./package.json')
 const { doRollup } = require('./lib')
+const { readLine } = require('./lib/utils')
 const { createProject, addTypescript, addBabel, addJest, addEslint } = require('./lib/projects')
 
 program.version(version, '-v, --version', '查看工具版本号')
@@ -24,8 +25,8 @@ program.command('build', { isDefault: true })
 
 program.command('add <library>')
   .description('添加库，支持: ts, jest, eslint, babel')
-  .option('--ts', '在添加jest时可以指定是否使用ts', false)
-  .action(async (library, options) => {
+  .action(async library => {
+    const getUseTs = async () => (await readLine('是否需要支持typescript? > (y / N) ', 'N')) === 'y'
     switch (library) {
       case "ts":
         addTypescript()
@@ -34,10 +35,10 @@ program.command('add <library>')
         addBabel()
         break
       case "jest":
-        addJest(options.ts)
+        await addJest(await getUseTs())
         break
       case "eslint":
-        addEslint()
+        await addEslint(await getUseTs())
         break
     }
   })

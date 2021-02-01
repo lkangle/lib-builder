@@ -1,6 +1,6 @@
 {
   "name": "@lkl/builder",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "index.js",
   "repository": "https://github.com/lkangle/lib-builder.git",
   "author": "Li Kangle <me@lkangle.cn>",
@@ -26,6 +26,7 @@
     "rollup-plugin-dts": "^2.0.1",
     "rollup-plugin-serve": "^1.1.0",
     "rollup-plugin-terser": "^7.0.2",
+    "typescript": "^4.1.2",
     "unzip": "^0.1.11"
   },
   "devDependencies": {

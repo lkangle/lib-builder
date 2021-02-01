@@ -55,7 +55,6 @@ Usage: builder add [options] <library>
 添加库，支持: ts, jest, eslint, babel
 
 Options:
-  --ts        在添加jest时可以指定是否使用ts (default: false)
   -h, --help  查看帮助
 ```
 
