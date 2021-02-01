@@ -2,7 +2,7 @@
 const program = require('commander')
 const { version } = require('./package.json')
 const { doRollup } = require('./lib')
-const { createProject } = require('./lib/projects')
+const { createProject, addTypescript, addBabel, addJest, addEslint } = require('./lib/projects')
 
 program.version(version, '-v, --version', '查看工具版本号')
   .helpOption('-h, --help', '查看帮助')
@@ -24,8 +24,22 @@ program.command('build', { isDefault: true })
 
 program.command('add <library>')
   .description('添加库，支持: ts, jest, eslint, babel')
-  .action(library => {
-    console.log('add library:', library)
+  .option('--ts', '在添加jest时可以指定是否使用ts', false)
+  .action(async (library, options) => {
+    switch (library) {
+      case "ts":
+        addTypescript()
+        break
+      case "babel":
+        addBabel()
+        break
+      case "jest":
+        addJest(options.ts)
+        break
+      case "eslint":
+        addEslint()
+        break
+    }
   })
 
 program.command('create <project-name>')

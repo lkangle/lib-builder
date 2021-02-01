@@ -5,7 +5,8 @@ const {
   readJsonFile,
   writeJsonFile,
   getPackageJsonPath,
-  execNpm
+  execNpm,
+  getJestConfig
 } = require('../../lib/utils')
 const fs = require('fs')
 const path = require('path')
@@ -48,5 +49,10 @@ describe('[Test] utils', () => {
 
   test('execNpm', () => {
     execNpm(process.cwd(), '-v')
+  })
+
+  test('getJestConfig', () => {
+    let conf = getJestConfig(true)
+    console.log(conf)
   })
 })

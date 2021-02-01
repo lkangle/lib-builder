@@ -7,7 +7,10 @@
 npm install --save-dev @lkl/builder --registry=http://npm.lkangle.cn
 ```
 
+全局安装可支持使用`create`命令
+
 ### 使用
+
 ```shell script
 $ npx builder -h
 Usage: builder [command] [options]
@@ -44,6 +47,15 @@ Options:
   --ts        使用typescript (default: false)
   --jest      添加jest (default: false)
   --eslint    添加eslint (default: false)
+  -h, --help  查看帮助
+  
+$ npx builder help add
+Usage: builder add [options] <library>
+
+添加库，支持: ts, jest, eslint, babel
+
+Options:
+  --ts        在添加jest时可以指定是否使用ts (default: false)
   -h, --help  查看帮助
 ```
 
