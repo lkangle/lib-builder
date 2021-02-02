@@ -22,6 +22,7 @@ describe('[Test] utils', () => {
     expect(isEmptyFolder(__dirname)).toBeFalsy()
     expect(isEmptyFolder('/home/empty')).toBeTruthy()
     expect(isEmptyFolder(path.resolve(__dirname, '../empty'))).toBeTruthy()
+    expect(isEmptyFolder(path.resolve(process.cwd()))).toBeFalsy()
   })
 
   test('unzipFile', () => {

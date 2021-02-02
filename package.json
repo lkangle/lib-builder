@@ -1,6 +1,6 @@
 {
   "name": "@lkl/builder",
-  "version": "1.0.7",
+  "version": "1.0.9",
   "main": "index.js",
   "repository": "https://github.com/lkangle/lib-builder.git",
   "author": "Li Kangle <me@lkangle.cn>",
