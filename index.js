@@ -18,6 +18,7 @@ program.command('build', { isDefault: true })
   .option('-f, --format <format>', '输出的文件类型', 'iife')
   .option('-n, --name <name>', '模块名')
   .option('-s, --sourcemap', '输出sourcemap文件', false)
+  .option('-t, --terser', '使用terser进行压缩', false)
   .option('-w, --watch', '监听文件变化', false)
   .usage('[options]')
   .action(async options => {

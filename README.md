@@ -36,6 +36,7 @@ Options:
   -f, --format <format>  输出的文件类型 (default: "iife")
   -n, --name <name>      模块名
   -s, --sourcemap        输出sourcemap文件 (default: false)
+  -t, --terser           使用terser进行压缩 (default: false)
   -w, --watch            监听文件变化 (default: false)
   -h, --help             查看帮助
 
