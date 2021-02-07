@@ -1,0 +1,24 @@
+name: Test
+
+on:
+  push:
+    tags-ignore:
+      - '*'
+    branches:
+      - '*'
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  test_publish:
+    name: Test And AutoPublish
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+          registry-url: http://npm.lkangle.cn
+      - run: npm install
+      - run: sudo npm run test

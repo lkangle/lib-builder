@@ -26,7 +26,7 @@ describe('[Test] utils', () => {
   })
 
   test('unzipFile', () => {
-    let target = '/Users/growingio/Desktop/GioWork/works2021/lib-builder/templates'
+    let target = path.resolve(__dirname, '../../templates')
     return unzipFile(target + '/demo', target + '/demo.zip')
   })
 
@@ -53,6 +53,6 @@ describe('[Test] utils', () => {
 
   test('getJestConfig', () => {
     let conf = getJestConfig(true)
-    console.log(conf)
+    expect(conf.length).toBeGreaterThanOrEqual(100)
   })
 })

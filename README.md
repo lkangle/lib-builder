@@ -102,7 +102,7 @@ Options:
 
 - @rollup/plugin-babel
 
-当项目跟目录下存在`.babelrs`或`.babelrc.json`的babel的配置时会启用，当启用babel时必须要安装相关的babel库
+当项目跟目录下存在的babel的配置时会启用，当启用babel时必须要安装相关的babel库
 
 插件默认配置如下，暂不支持配置
 ```json5
@@ -110,5 +110,16 @@ Options:
   exclude: 'node_modules',
   babelHelpers: 'bundled',
   extensions: '${extensions}'
+}
+```
+
+- @rollup/plugin-eslint
+
+当项目下存在eslint的配置时会自动启用，启用需要安装对应的eslint依赖
+
+插件默认配置，不支持修改
+```json5
+{
+  throwOnError: true
 }
 ```
