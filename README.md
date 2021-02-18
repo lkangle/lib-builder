@@ -4,7 +4,7 @@
 
 ### 安装
 ```shell script
-npm install --save-dev @lkl/builder --registry=http://npm.lkangle.cn
+npm install --save-dev lkl-builder --registry=http://npm.lkangle.cn
 ```
 
 全局安装可支持使用`create`命令

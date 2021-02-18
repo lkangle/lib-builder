@@ -1,8 +1,7 @@
 {
-  "name": "@lkl/builder",
-  "version": "1.1.4",
+  "name": "lkl-builder",
+  "version": "1.1.5",
   "main": "index.js",
-  "repository": "https://github.com/lkangle/lib-builder.git",
   "author": "Li Kangle <me@lkangle.cn>",
   "license": "MIT",
   "scripts": {
@@ -11,8 +10,9 @@
   "bin": {
     "builder": "index.js"
   },
-  "publishConfig": {
-    "registry": "http://npm.lkangle.cn"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lkangle/lib-builder.git"
   },
   "dependencies": {
     "@rollup/plugin-alias": "^3.1.1",
