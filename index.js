@@ -3,7 +3,7 @@ const program = require('commander')
 const { version } = require('./package.json')
 const { doRollup } = require('./lib')
 const { readLine } = require('./lib/utils')
-const { createProject, addTypescript, addBabel, addJest, addEslint } = require('./lib/projects')
+const { createProject, addTypescript, addBabel, addJest, addEslint, initProject } = require('./lib/projects')
 
 program.version(version, '-v, --version', '查看工具版本号')
   .helpOption('-h, --help', '查看帮助')
@@ -52,6 +52,12 @@ program.command('create <project-name>')
   .option('--eslint', '添加eslint', false)
   .action(async (project, options) => {
     await createProject(project, options)
+  })
+
+program.command('init <project-name>')
+  .description('使用rollup模板初始化一个开发项目')
+  .action(async (project) => {
+    await initProject(project)
   })
 
 program.parse(process.argv)

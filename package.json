@@ -1,6 +1,6 @@
 {
   "name": "lkl-builder",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "main": "index.js",
   "author": "Li Kangle <me@lkangle.cn>",
   "license": "MIT",
